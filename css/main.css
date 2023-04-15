@@ -1,0 +1,284 @@
+/* reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a,
+a:active {
+  text-decoration: none;
+  color: #4d4c1a;
+}
+
+/* estilos generales */
+
+
+body {
+  background-color: #eae2d2;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main {
+  background-color: #ece8df;
+}
+
+
+/* Estilos Galeria */
+.contenedor div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contenedor {
+  height: 70vh;
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 33%);
+  gap: 1rem;
+  margin: 1rem 3rem 3rem 3rem;
+}
+
+main .img-dos,
+.img-cinco {
+  display: none;
+}
+
+/* estilos RESTAURANTE */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container div {
+  flex-basis: calc(33.33% - 20px);
+  /* Tamaño de las imágenes en computadoras */
+  margin-bottom: 20px;
+}
+
+/* Estilos Sobre Nosotros */
+.aboutus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.aboutus img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos específicos para celulares */
+@media screen and (max-width: 768px) {
+
+  /* Estilos del MAIN */
+
+  /* Main Servicios */
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .service img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Main Galeria */
+  .contenedor {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 50%);
+  }
+
+  .img-uno,
+  .img-tres {
+    grid-row: span 1;
+  }
+
+  .img-cuatro {
+    grid-column: span 2;
+  }
+
+  /* Main Restaurante */
+  .container div {
+    flex-basis: calc(100% - 20px);
+  }
+
+
+}
+
+
+/* Estilos del formulario con grid */
+
+.formulario-reserva {
+  display: grid;
+  gap: 10px;
+  max-width: 50%;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 10px solid #ddd;
+  border-radius: 5px;
+  overflow-x: hidden;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 5px;
+}
+
+input,
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  
+}
+
+button[type="submit"] {
+  background-color: #8f9e81;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type="reset"] {
+  background-color: #ccc;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* estilos wpp  */
+.whatsapp-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+
+
+/* Estilos específicos para computadoras */
+@media screen and (min-width:1024px) {
+
+  /* estilos del main */
+
+  /* main GALERIA */
+  main .img-dos,
+  .img-cinco {
+    display: block;
+  }
+
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 40% 40% 20%;
+  }
+
+  .img-uno,
+  .img-tres {
+    grid-row: span 2;
+  }
+
+  .img-dos,
+  .img-cuatro {
+    grid-column: span 1;
+  }
+
+  .img-cinco {
+    grid-column: span 3;
+  }
+
+
+  /* Estilos para el nav*/
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+  }
+
+
+  .navbar-nav {
+    display: flex;
+    margin-left: 90px;
+  }
+
+  .navbar-brand {
+    margin-right: 400px;
+  }
+
+  .navbar-nav a {
+    margin-left: 10px;
+  }
+
+  /* Estilos formulario */
+  .formulario-reserva {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-group:last-child {
+    grid-column: 1 / span 2;
+  }
+
+  .map-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 20px;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 450px;
+  }
+
+
+  /* estilo Servicios */
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .service img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* estilos del footer */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #a4935b;
+}
+
+.instagram-icon {
+  width: 15px;
+  height: auto;
+  margin-right: 3px;
+}
+
+.footer-text {
+  margin-top: 0px;
+}
